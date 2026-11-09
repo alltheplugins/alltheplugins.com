@@ -1,0 +1,62 @@
+#atp-preview .launch-features{margin-top:22px}
+#atp-preview .launch-features>section{margin:0 -24px;padding:46px 24px 50px;border-bottom:1px solid var(--atp-line)}
+#atp-preview .launch-features>section:nth-child(2){background:rgba(255,255,255,.025)}
+#atp-preview .launch-features>.atp-full-releases::before{display:none}
+#atp-preview .launch-smooth{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);column-gap:36px}
+#atp-preview .launch-smooth h2{font-size:clamp(42px,4.6vw,66px)!important;margin-bottom:25px!important}
+#atp-preview .launch-smooth .atp-featured-headline{font-size:37px;line-height:1.15;color:var(--atp-brand-cyan,#00e1e9)}
+#atp-preview .launch-smooth .atp-featured-description{font-size:17px;line-height:1.65}
+#atp-preview .launch-smooth .launch-final-paragraph{margin-bottom:6px}
+#atp-preview .launch-smooth .launch-signoff{margin:0 0 30px;color:var(--atp-text);font-size:17px}
+#atp-preview .launch-smooth .atp-featured-visual{align-self:center}
+#atp-preview .launch-smooth .atp-full-shot{height:auto;filter:drop-shadow(0 22px 40px #0009)}
+#atp-preview .launch-smooth .atp-featured-download-label{font-size:19px;color:var(--atp-brand-cyan,#00e1e9);margin-bottom:24px}
+#atp-preview .launch-smooth .atp-collection-platforms{margin-bottom:24px}
+#atp-preview .launch-features .atp-collection-spotlight{padding:0}
+#atp-preview .launch-features .atp-collection-members{grid-template-columns:repeat(3,minmax(0,1fr))}
+#atp-preview .launch-features .atp-collection-member figure{height:180px}
+#atp-preview .launch-features .atp-collection-member img{height:100%;width:100%;object-fit:contain}
+#atp-preview .launch-collection-note{font-size:12px;color:var(--atp-muted)}
+@media(max-width:760px){
+ #atp-preview .launch-features>section{margin:0 -14px;padding:30px 14px 36px}
+ #atp-preview .launch-smooth{grid-template-columns:1fr}
+ #atp-preview .launch-smooth h2{font-size:clamp(42px,9vw,64px)!important}
+ #atp-preview .launch-smooth .atp-featured-headline{font-size:31px}
+ #atp-preview .launch-features .atp-collection-members{grid-template-columns:1fr}
+ #atp-preview .launch-features .atp-collection-member figure{height:200px}
+}
+#atp-preview .bite-club-intro{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);align-items:center;gap:40px}
+#atp-preview .bite-club .atp-eyebrow{font-size:11px;letter-spacing:.17em;color:var(--atp-brand-amber);margin:0 0 22px}
+#atp-preview .bite-club h2{font:300 clamp(48px,5.4vw,72px)/1.06 'Segoe UI',Arial,sans-serif;letter-spacing:-.05em;margin:0 0 22px}
+#atp-preview .bite-club h2 strong{font-weight:700}
+#atp-preview .bite-club-headline{font-size:32px;line-height:1.15;letter-spacing:-.025em;font-weight:650;color:var(--atp-brand-magenta);margin:0 0 20px}
+#atp-preview .bite-club-description{font-size:17px;line-height:1.65;color:var(--atp-muted);margin:0 0 22px;max-width:30em}
+#atp-preview .bite-club-free{font-size:14px;font-weight:600;margin:0}
+#atp-preview .bite-club-soap{margin:0}
+#atp-preview .bite-club-soap img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+#atp-preview .bite-club-members{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;gap:26px;margin:36px 0 0;padding:0}
+#atp-preview .bite-club-members li{min-width:0}
+#atp-preview .bite-club-member{display:block;color:var(--atp-text);text-decoration:none}
+#atp-preview .bite-club-member figure{margin:0 0 15px;overflow:hidden;background:#08090a;aspect-ratio:16/9}
+#atp-preview .bite-club-member img{display:block;width:100%;height:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .2s ease}
+#atp-preview .bite-club-member:hover img{transform:scale(1.025)}
+#atp-preview .bite-club-member strong{display:block;font-size:18px;font-weight:600;margin-bottom:5px}
+#atp-preview .bite-club-member span{display:block;color:var(--atp-muted);font-size:13px}
+#atp-preview .bite-club-member:hover strong{text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--atp-brand-magenta)}
+#atp-preview .bite-club-member:focus-visible{outline:2px solid var(--atp-brand-cyan);outline-offset:7px}
+@media(max-width:760px){#atp-preview .bite-club-intro{grid-template-columns:1fr;gap:28px}#atp-preview .bite-club-members{grid-template-columns:1fr;gap:28px}#atp-preview .bite-club h2{font-size:54px}#atp-preview .bite-club-headline{font-size:29px}}
+@media(prefers-reduced-motion:reduce){#atp-preview .bite-club-member img{transition:none}}
+#atp-preview .bite-club-soap img{aspect-ratio:640/520;object-fit:contain}
+#atp-preview .bite-club-member figure{aspect-ratio:640/520;background:none;overflow:visible}
+#atp-preview .bite-club-member img{aspect-ratio:640/520;object-fit:contain}
+#atp-preview .bite-club-member strong,#atp-preview .bite-club-member span{text-align:center}
+#atp-preview .bite-club-members{gap:20px;margin-top:12px}
+#atp-preview .bite-club-member figure{margin-bottom:0}
+#atp-preview .bite-club-soap img{aspect-ratio:16/9;object-fit:cover}
+#atp-preview .bite-club-member figure{aspect-ratio:16/9;overflow:hidden;background:rgba(255,255,255,.025);display:flex;align-items:center;justify-content:center;padding:12px}
+#atp-preview .bite-club-member img{aspect-ratio:auto;object-fit:contain;max-width:100%;max-height:100%;width:100%;height:100%}
+#atp-preview .launch-features .atp-featured-download-label,#atp-preview .launch-features .bite-club-free{font-size:19px;font-weight:600;line-height:1.5;color:var(--atp-brand-cyan,#00e1e9);margin:0 0 24px}
+#atp-preview .launch-features .atp-collection-platforms{margin-bottom:24px}
+#atp-preview .launch-features .atp-featured-card .atp-featured-description,#atp-preview .launch-features .bite-club-description{font-size:17px;line-height:1.65;font-weight:400;color:var(--atp-muted)}
+
+#atp-preview .bite-club h2{display:flex;align-items:center;gap:.12em;font-size:clamp(42px,4.6vw,66px);white-space:nowrap}
