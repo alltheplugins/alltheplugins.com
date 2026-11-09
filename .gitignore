@@ -1,0 +1,13 @@
+/*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/CNAME
+!/README.md
+!/LICENSE
+!/marked-LICENSE.md
+!/assets/
+/assets/*
+!/assets/launch.css
+!/assets/bite-club-soap.png
+!/assets/smooth-e.png
