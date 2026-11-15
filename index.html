@@ -1684,7 +1684,7 @@ if(__exports != exports)module.exports = exports;return module.exports}));
   }
  }
  function sortedPlugins(){
-  if(state.sort==='updated-desc')return [...state.plugins].sort((a,b)=>a.slug==='smooth-e'?-1:b.slug==='smooth-e'?1:(Date.parse(pluginActivity.updatedAt[b.doc])||0)-(Date.parse(pluginActivity.updatedAt[a.doc])||0)||collator.compare(a.name,b.name));
+  if(state.sort==='updated-desc')return [...state.plugins].sort((a,b)=>(Date.parse(pluginActivity.updatedAt[b.doc])||0)-(Date.parse(pluginActivity.updatedAt[a.doc])||0)||collator.compare(a.name,b.name));
   const [field,direction]=state.sort.split('-'),sign=direction==='desc'?-1:1;
   const key=plugin=>field==='type'?plugin.category:field==='inspiration'?(plugin.inspiration||'Not specified'):plugin.name;
   return [...state.plugins].sort((a,b)=>sign*collator.compare(key(a),key(b))||collator.compare(a.name,b.name));
