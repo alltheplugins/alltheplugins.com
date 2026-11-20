@@ -739,6 +739,24 @@ body{background:#0b0c0d}
 #atp-preview .atp-support-return{font-size:12px;line-height:1.6;color:var(--atp-muted);margin:18px 0 0}
 @media(max-width:420px){#atp-preview .atp-support-dialog{padding:18px 22px 24px;width:calc(100vw - 32px)}#atp-preview .atp-support-dialog h2{font-size:30px}#atp-preview .atp-support-actions{align-items:flex-start;flex-direction:column;gap:4px}}
 </style>
+<style>
+#atp-preview .atp-download-verification{flex:0 0 100%;min-width:0;border-top:1px solid var(--atp-line);padding-top:14px;margin-top:4px;font-size:13px}
+#atp-preview .atp-apple-verification{display:flex;align-items:flex-start;gap:9px;line-height:1.5;margin:0 0 8px;color:var(--atp-ink)}
+#atp-preview .atp-apple-verification svg{width:17px;height:17px;flex:0 0 17px;margin-top:1px;color:var(--atp-accent)}
+#atp-preview .atp-apple-verification strong,#atp-preview .atp-apple-verification small{display:block}
+#atp-preview .atp-apple-verification small{color:var(--atp-muted);font-size:12px;margin-top:2px}
+#atp-preview .atp-verification-details summary{cursor:pointer;color:var(--atp-accent);line-height:24px;min-height:44px;padding:10px 0}
+#atp-preview .atp-verification-details summary:hover{text-decoration:underline;text-underline-offset:4px}
+#atp-preview .atp-verification-details summary:focus-visible,#atp-preview .atp-verification-copy:focus-visible{outline:2px solid var(--atp-accent);outline-offset:3px}
+#atp-preview .atp-verification-details p{margin:0 0 8px;color:var(--atp-muted);font-size:12px}
+#atp-preview .atp-verification-details dl{margin:0}
+#atp-preview .atp-verification-details dl>div{position:relative;margin-bottom:9px}
+#atp-preview .atp-verification-details dt{display:flex;align-items:center;min-height:44px;padding-right:62px;color:var(--atp-ink);font-weight:600}
+#atp-preview .atp-verification-details dd{margin:0}
+#atp-preview .atp-verification-details code{display:block;color:var(--atp-muted);overflow-wrap:anywhere;user-select:all;font-size:11px}
+#atp-preview .atp-verification-copy{position:absolute;top:0;right:0;min-height:44px;background:none;border:0;color:var(--atp-accent);cursor:pointer;padding:0 5px;text-decoration:underline;text-underline-offset:3px}
+#atp-preview .atp-verification-status:not(:empty){margin:4px 0 0}
+</style>
 <link rel="stylesheet" href="assets/launch.css?v=2991a3b"></head><body>
 <div id="atp-preview" data-catalog-view="grid" aria-label="alltheplugins.com">
  <div class="atp-wrap">
@@ -835,6 +853,13 @@ body{background:#0b0c0d}
     <aside class="atp-download" aria-label="Plugin downloads">
      <span class="atp-download-label">Download</span><span class="atp-beta-badge" data-download-release-status hidden>Beta</span>
      <div id="atp-download-files" aria-live="polite"><p class="atp-file-note">Loading downloads…</p></div>
+     <section class="atp-download-verification" aria-label="Download verification" hidden>
+      <p class="atp-apple-verification" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 22 3-1.9c3.4-2.1 5-5.2 5-8.9V5.5L12 2 4 5.5v5.7c0 3.7 1.6 6.8 5 8.9z"/><path d="m8.7 12 2.1 2.1 4.5-4.6"/></svg><span><strong>Signed with Apple Developer ID</strong><small>Notarized by Apple · Mac VST3 and AU</small></span></p>
+      <details class="atp-verification-details"><summary>Verify this download</summary>
+       <p>Compare the SHA-256 checksum of your ZIP with the value for your download.</p>
+       <dl></dl><p class="atp-verification-status" role="status"></p>
+      </details>
+     </section>
     </aside>
     <aside class="atp-specs" aria-label="Plugin specifications"><h3>At a glance</h3><dl><div><dt>Type</dt><dd></dd></div><div><dt>Format</dt><dd></dd></div><div><dt>Platform</dt><dd></dd></div><div><dt>Binary license</dt><dd></dd></div><div><dt>Version</dt><dd data-release-version></dd></div></dl></aside>
     </div>
@@ -1546,15 +1571,56 @@ if(__exports != exports)module.exports = exports;return module.exports}));
   // Prefer a complete package when the documentation also links its raw module.
   return files.filter(file=>file.kind!=='module'||!files.some(other=>other.kind==='package'&&other.platform===file.platform&&file.formats.every(format=>other.formats.includes(format))));
  }
+ const driveCompVerification=new Map([
+  ['https://raw.githubusercontent.com/alltheplugins/all-the-plugins/b2c977df8bf1ab9cd7b35994946c933de10ba52c/downloads/windows/ATP-DriveComp-Windows-VST3.zip',{platform:'Windows',format:'VST3',label:'Windows VST3',sha256:'651f80e9e843335e36330fabc17d22dd455d78915cae701dba0bdf1b4c94ca2c'}],
+  ['https://raw.githubusercontent.com/alltheplugins/all-the-plugins/e3db1b79498e2aaf2fa32b6a98a5823d561cf0bd/downloads/macos/ATP-DriveComp-macOS-universal-VST3.zip',{platform:'macOS',format:'VST3',label:'Mac VST3',sha256:'58c7437daed339c9ea85c2a9d376f4813c050da10be0d5a48a3890e83db669b1'}],
+  ['https://raw.githubusercontent.com/alltheplugins/all-the-plugins/e3db1b79498e2aaf2fa32b6a98a5823d561cf0bd/downloads/macos/ATP-DriveComp-macOS-universal-AU.zip',{platform:'macOS',format:'AU',label:'Mac AU',sha256:'17eb63a14088f33ecea23e7ee5e75020d2c18db8804aac80d948618b619e32ff'}]
+ ]);
+ function verificationFor(plugin,files){
+  if(plugin?.doc!=='ATP-DRIVECOMP.md'||plugin.slug!=='drivecomp')return {entries:[],apple:false};
+  const byUrl=new Map(files.map(file=>[file.url,file]));
+  const entries=[...driveCompVerification].flatMap(([url,entry])=>{
+   const file=byUrl.get(url);
+   return file?.kind==='package'&&file.platform===entry.platform&&file.format===entry.format?[entry]:[];
+  });
+  const macFiles=files.filter(file=>file.platform==='macOS'),macEntries=entries.filter(entry=>entry.platform==='macOS');
+  return {entries,apple:macEntries.length===2&&macFiles.length===2};
+ }
+ function renderVerification(plugin,files=[]){
+  const section=$('.atp-download-verification'),details=section.querySelector('details'),list=details.querySelector('dl'),message=details.querySelector('[role="status"]');
+  const {entries,apple}=verificationFor(plugin,files);
+  section.hidden=!entries.length;
+  section.querySelector('.atp-apple-verification').hidden=!apple;
+  const signature=entries.map(entry=>entry.sha256).join('/');
+  if(list.dataset.signature===signature)return;
+  list.dataset.signature=signature;list.replaceChildren();details.open=false;message.textContent='';
+  for(const {label,sha256} of entries){
+   const row=document.createElement('div'),name=document.createElement('dt'),value=document.createElement('dd'),hash=document.createElement('code'),copy=document.createElement('button');
+   name.textContent=label;
+   copy.type='button';copy.className='atp-verification-copy';copy.textContent='Copy';copy.setAttribute('aria-label','Copy SHA-256 for '+label);
+   hash.textContent=sha256;
+   copy.addEventListener('click',async()=>{
+    let result;
+    try{await navigator.clipboard.writeText(sha256);result=label+' SHA-256 copied.';}
+    catch{
+     const selection=window.getSelection();
+     if(selection&&hash.isConnected){const range=document.createRange();range.selectNodeContents(hash);selection.removeAllRanges();selection.addRange(range);}
+     result='Copy unavailable. Select and copy the '+label+' checksum manually.';
+    }
+    if(hash.isConnected)message.textContent=result;
+   });
+   value.append(hash,copy);row.append(name,value);list.append(row);
+  }
+ }
  function renderDownloads(plugin,source,saved=false){
   const container=$('#atp-download-files');container.replaceChildren();
-  if(!source){const loading=document.createElement('p');loading.className='atp-file-note';loading.textContent='Loading downloads…';container.append(loading);return;}
+  if(!source){renderVerification(null);const loading=document.createElement('p');loading.className='atp-file-note';loading.textContent='Loading downloads…';container.append(loading);return;}
   const files=publishedDownloads(plugin,source,saved);
   if(!isSitePublished({...plugin,downloads:files})){
    state.plugins=state.plugins.filter(entry=>entry.doc!==plugin.doc);
    publishReleaseCount(state.plugins.length);renderCatalog();route();return false;
   }
-  plugin.downloads=files;renderMaturity(plugin);
+  plugin.downloads=files;renderMaturity(plugin);renderVerification(plugin,files);
   const order=['Windows','macOS'];
   const sorted=[...files].sort((a,b)=>((order.indexOf(a.platform)+1)||3)-((order.indexOf(b.platform)+1)||3)||['VST3','AU','VST2'].indexOf(a.format)-['VST3','AU','VST2'].indexOf(b.format));
   for(const file of sorted){
@@ -1907,13 +1973,13 @@ if(__exports != exports)module.exports = exports;return module.exports}));
   $('#atp-home').hidden=page!=='home';$('#atp-about-page').hidden=page!=='about';$('#atp-contribute-page').hidden=page!=='contribute';$('#atp-detail').hidden=page!=='detail';
   if(page==='home'){if(releaseCount!==null)releaseCounter.reveal();updateNewBadges();}else releaseCounter.hide();
   $$('.atp-nav [data-page]').forEach(button=>{const active=button.dataset.page===(page==='detail'?'home':page);button.classList.toggle('atp-current',active);if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');});
-  if(page!=='detail')analytics.route(page);
+  if(page!=='detail'){analytics.route(page);renderVerification(null);}
   if(page==='detail'){
    const plugin=ATPCatalog.resolvePluginRoute(state.plugins,segments[1],isSitePublished);
    for(const element of [$('.atp-download'),$('.atp-detail-image'),$('.atp-specs'),$('.atp-detail-tabs')])element.hidden=!plugin;
    analytics.route('detail',plugin);
    if(plugin)renderPlugin(plugin);
-   else{++state.request;state.current=null;for(const element of $$('[data-release-status],[data-download-release-status],[data-beta-notice]'))element.hidden=true;$('#atp-download-files').replaceChildren();document.title='Plugin unavailable — alltheplugins.com';$('#plugin-title').textContent='Plugin not found';$('[data-detail-category]').textContent='';$('[data-detail-name]').textContent='Plugin not found';$('.atp-detail-top p:not(.atp-eyebrow)').textContent='This page may have been renamed. Browse the current catalog for its new name.';$('#atp-panel-overview').textContent='Choose a plugin from the catalog.';showTab('overview');}
+   else{++state.request;state.current=null;renderVerification(null);for(const element of $$('[data-release-status],[data-download-release-status],[data-beta-notice]'))element.hidden=true;$('#atp-download-files').replaceChildren();document.title='Plugin unavailable — alltheplugins.com';$('#plugin-title').textContent='Plugin not found';$('[data-detail-category]').textContent='';$('[data-detail-name]').textContent='Plugin not found';$('.atp-detail-top p:not(.atp-eyebrow)').textContent='This page may have been renamed. Browse the current catalog for its new name.';$('#atp-panel-overview').textContent='Choose a plugin from the catalog.';showTab('overview');}
   }else document.title=page==='contribute'?'Support — alltheplugins.com':page==='about'?'About — alltheplugins.com':'alltheplugins.com — Free audio plugins';
  }
  async function refreshCatalog(){
