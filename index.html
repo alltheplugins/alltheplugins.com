@@ -750,8 +750,9 @@ body{background:#0b0c0d}
 <link rel="stylesheet" href="assets/launch.css?v=2991a3b"><style id="atp-feature-carousel-style">
 /* Progressive enhancement: original feature sections remain readable without JS. */
 #atp-preview .launch-features.atp-carousel{position:relative}
+#atp-preview .launch-features[data-static-hero]>section:not(#atp-gpp-feature){display:none!important}
 #atp-preview .atp-carousel>section[hidden]{display:none!important}
-#atp-preview .atp-carousel>section{border-bottom:0;background:none}
+#atp-preview .atp-carousel>section,#atp-preview .launch-features[data-static-hero]>#atp-gpp-feature{border-bottom:0;background:none}
 #atp-preview .atp-carousel>#atp-editors-feature{background:rgba(255,255,255,.025)}
 #atp-preview #atp-gpp-feature .atp-full-shot{width:min(100%,319px);height:auto;aspect-ratio:319/733;margin-inline:auto}
 #atp-preview .atp-carousel-controls{display:flex;align-items:center;justify-content:center;gap:0;min-height:52px;padding:8px 0}
@@ -779,7 +780,7 @@ body{background:#0b0c0d}
    <nav class="atp-nav" aria-label="Main navigation"><button type="button" class="cursor-interaction" data-page="home">Plugins</button><button type="button" class="atp-about atp-current cursor-interaction" data-page="about" aria-current="page">About</button><a class="cursor-interaction" href="https://ko-fi.com/alltheplugins" target="_blank" rel="noopener noreferrer" aria-label="Support on Ko-fi">Support</a></nav>
   </header>
   <main id="atp-home">
-   <div class="launch-features"><section class="atp-full-releases" aria-labelledby="atp-gpp-title" id="atp-gpp-feature">
+   <div class="launch-features" data-static-hero><section class="atp-full-releases" aria-labelledby="atp-gpp-title" id="atp-gpp-feature">
  <article class="atp-full-card atp-featured-card" data-full-release="g-plus-plus">
   <div class="atp-featured-heading">
    <span class="atp-full-status">FEATURED PLUGIN</span>
@@ -2179,7 +2180,7 @@ if(__exports != exports)module.exports = exports;return module.exports}));
 <script id="atp-feature-carousel-script">
 (()=>{
  const carousel=document.querySelector('.launch-features');
- if(!carousel)return;
+ if(!carousel||carousel.hasAttribute('data-static-hero'))return;
  const slides=[...carousel.children].filter(node=>node.tagName==='SECTION');
  if(slides.length!==3)return;
  const home=document.getElementById('atp-home');
