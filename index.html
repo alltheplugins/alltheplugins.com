@@ -753,6 +753,7 @@ body{background:#0b0c0d}
 #atp-preview .atp-carousel>section[hidden]{display:none!important}
 #atp-preview .atp-carousel>section{border-bottom:0;background:none}
 #atp-preview .atp-carousel>#atp-editors-feature{background:rgba(255,255,255,.025)}
+#atp-preview #atp-gpp-feature .atp-full-shot{width:min(100%,319px);height:auto;aspect-ratio:319/733;margin-inline:auto}
 #atp-preview .atp-carousel-controls{display:flex;align-items:center;justify-content:center;gap:0;min-height:52px;padding:8px 0}
 #atp-preview .atp-carousel-controls button{appearance:none;border:0;border-radius:0;background:none;color:var(--atp-muted);font:inherit;font-size:12px;min-width:44px;min-height:44px;padding:8px 12px;cursor:pointer}
 #atp-preview .atp-carousel-controls button:hover{color:var(--atp-ink)}
@@ -778,7 +779,22 @@ body{background:#0b0c0d}
    <nav class="atp-nav" aria-label="Main navigation"><button type="button" class="cursor-interaction" data-page="home">Plugins</button><button type="button" class="atp-about atp-current cursor-interaction" data-page="about" aria-current="page">About</button><a class="cursor-interaction" href="https://ko-fi.com/alltheplugins" target="_blank" rel="noopener noreferrer" aria-label="Support on Ko-fi">Support</a></nav>
   </header>
   <main id="atp-home">
-   <div class="launch-features"><section class="atp-full-releases" aria-labelledby="atp-smooth-title" id="atp-smooth-feature">
+   <div class="launch-features"><section class="atp-full-releases" aria-labelledby="atp-gpp-title" id="atp-gpp-feature">
+ <article class="atp-full-card atp-featured-card" data-full-release="g-plus-plus">
+  <div class="atp-featured-heading">
+   <span class="atp-full-status">FEATURED PLUGIN</span>
+   <h2 id="atp-gpp-title"><a class="atp-featured-details" href="#/plugins/g-plus-plus" aria-label="Explore ATP G++"><img class="atp-featured-logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MCAzMiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIj48dGl0bGUgaWQ9InRpdGxlIj5BbGwgdGhlIFBsdWdpbnM8L3RpdGxlPjxnIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMy4zIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIHN0cm9rZT0iIzAwZTFlOSIgZD0iTTggMjYgMjIgOCAzNiAyNiIvPjxwYXRoIHN0cm9rZT0iI2ZmYzE0MyIgZD0iTTI5IDhINTJNNDEgOFYyNiIvPjxwYXRoIHN0cm9rZT0iI2U4MzFhNSIgZD0iTTU2IDhINjhDNzYgOCA3NiAxNyA2OCAxN0g1NlYyNiIvPjwvZz48L3N2Zz4=" alt="ATP" width="80" height="32"><span>G++</span></a></h2>
+   <p class="atp-featured-headline">Stereo bus compression.</p>
+  </div>
+  <div class="atp-featured-visual"><img class="atp-full-shot" src="https://raw.githubusercontent.com/alltheplugins/all-the-plugins/50c9b1d1cab16eb5a9e249c0eb0969893c1e224a/screenshots/ATP-G-Plus-Plus.png" alt="ATP G++ editor" width="319" height="733" fetchpriority="high"></div>
+  <div class="atp-featured-copy">
+   <p class="atp-featured-description">ATP G++ is a faithful recreation of the SSL G-Comp 500 Series stereo bus compressor that’s lived on my drum bus since 2019. My favorite move is to slam the drums, then dial back the Mix until the dry attack comes through. That’s how I get the energy I want without flattening the kit. That same snap can tighten up a stack of guitars, hold backing vocals together, or give a full mix a little glue. I’m sharing it free so you can make it your own.</p>
+   <p class="atp-featured-download-label">100% free. Now go make music.</p>
+   <div class="atp-collection-platforms" aria-label="Windows VST3 and Mac VST3 / AU"><div class="atp-collection-platform"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 2.3 6.5 1.4v6.1H0zm7.5-1L16 0v7.5H7.5zM0 8.5h6.5v6.1L0 13.7zm7.5 0H16V16l-8.5-1.2z"/></svg><span>Windows<small>VST3</small></span></div><div class="atp-collection-platform"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M11.18 0c.09.95-.3 1.87-.86 2.55-.58.67-1.5 1.17-2.43 1.1-.12-.91.34-1.87.88-2.47C9.37.5 10.36.04 11.18 0ZM13.84 12.36c-.36.83-.54 1.2-1 1.93-.66 1.02-1.59 2.28-2.74 2.29-1.02.01-1.28-.66-2.67-.65-1.38.01-1.68.67-2.7.66-1.15-.01-2.03-1.14-2.69-2.16-1.85-2.84-2.04-6.19-.9-7.97.81-1.26 2.09-2 3.3-2 1.23 0 2 .68 3.01.68.98 0 1.57-.68 3-.68 1.07 0 2.21.59 3.02 1.61-2.66 1.45-2.22 5.22.37 6.29Z" transform="translate(1 0) scale(.9)"/></svg><span>Mac<small>VST3 / AU</small></span></div></div>
+   <div class="atp-full-downloads" aria-label="ATP G++ downloads"><a class="atp-full-download" href="https://raw.githubusercontent.com/alltheplugins/all-the-plugins/ed6b867a02212142ba9346fc88aa2b07e865b29c/downloads/windows/ATP%20G%2B%2B.vst3" download>Windows VST3</a><a class="atp-full-download" href="https://raw.githubusercontent.com/alltheplugins/all-the-plugins/95366d2821cc9dd2a8dd96ab5ed89c9e1c3f93f7/downloads/macos/ATP-G-Plus-Plus-macOS-universal-VST3.zip" download>Mac VST3</a><a class="atp-full-download" href="https://raw.githubusercontent.com/alltheplugins/all-the-plugins/95366d2821cc9dd2a8dd96ab5ed89c9e1c3f93f7/downloads/macos/ATP-G-Plus-Plus-macOS-universal-AU.zip" download>Mac AU</a></div>
+  </div>
+ </article>
+</section><section class="atp-full-releases" aria-labelledby="atp-smooth-title" id="atp-smooth-feature">
  <article class="atp-full-card atp-featured-card launch-smooth" data-full-release="smooth-e">
   <div class="atp-featured-heading">
    <span class="atp-full-status">FEATURED PLUGIN</span>
@@ -2180,14 +2196,14 @@ if(__exports != exports)module.exports = exports;return module.exports}));
  const carousel=document.querySelector('.launch-features');
  if(!carousel)return;
  const slides=[...carousel.children].filter(node=>node.tagName==='SECTION');
- if(slides.length!==3)return;
+ if(slides.length!==4)return;
  const home=document.getElementById('atp-home');
  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
  let index=0,inView=false,timer=null,deadline=null,remaining=8000;
  const controls=document.createElement('div');
  controls.className='atp-carousel-controls';
  controls.setAttribute('role','group');controls.setAttribute('aria-label','Featured plugins controls');
- controls.innerHTML='<button type="button" aria-label="Previous feature">&lt;</button><button type="button" class="atp-carousel-dot" aria-label="Show smooth(e)"></button><button type="button" class="atp-carousel-dot" aria-label="Show DriveComp"></button><button type="button" class="atp-carousel-dot" aria-label="Show Bite Club"></button><button type="button" aria-label="Next feature">&gt;</button>';
+ controls.innerHTML='<button type="button" aria-label="Previous feature">&lt;</button><button type="button" class="atp-carousel-dot" aria-label="Show ATP G++"></button><button type="button" class="atp-carousel-dot" aria-label="Show smooth(e)"></button><button type="button" class="atp-carousel-dot" aria-label="Show DriveComp"></button><button type="button" class="atp-carousel-dot" aria-label="Show Bite Club"></button><button type="button" aria-label="Next feature">&gt;</button>';
  const [previous,...rest]=controls.querySelectorAll('button');
  const next=rest.pop(),dots=rest;
  carousel.setAttribute('role','region');carousel.setAttribute('aria-roledescription','carousel');carousel.setAttribute('aria-label','Featured plugins and collection');
